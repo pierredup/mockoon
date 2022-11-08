@@ -18,9 +18,7 @@
             [items]="methods"
             dropdownId="methods"
           ></app-custom-select>
-          <div class="input-group-prepend">
-            <span class="input-group-text">/</span>
-          </div>
+          <span class="input-group-text">/</span>
           <input
             type="text"
             class="form-control"
@@ -32,7 +30,6 @@
 
           <div
             *ngIf="environmentsStatus$ | async as environmentsStatus"
-            class="input-group-prepend"
             ngbTooltip="Open route in browser (GET method only)"
           >
             <button
@@ -51,14 +48,12 @@
               <app-svg icon="open_in_new"></app-svg>
             </button>
           </div>
-          <div class="input-group-prepend">
-            <span
-              *ngIf="routeHasQueryParams()"
-              class="input-group-text text-warning"
-              ngbTooltip="Route cannot be declared with query parameters, please add them when you call the route"
-              ><app-svg icon="warning"></app-svg
-            ></span>
-          </div>
+          <span
+            *ngIf="routeHasQueryParams()"
+            class="input-group-text text-warning"
+            ngbTooltip="Route cannot be declared with query parameters, please add them when you call the route"
+            ><app-svg icon="warning"></app-svg
+          ></span>
         </div>
 
         <!-- Documentation -->
@@ -109,7 +104,7 @@
                 ngbDropdownToggle
               >
                 <div class="dropdown-toggle-label">
-                  <span class="pr-2"
+                  <span class="pe-2"
                     >Response {{ activeRouteResponseIndex$ | async }} ({{
                       activeRouteResponse?.statusCode
                     }})</span
@@ -148,7 +143,7 @@
                   (dropped)="reorganizeRouteResponses($event)"
                 >
                   <span
-                    class="flex-grow-1 mr-2 ellipsis"
+                    class="flex-grow-1 me-2 ellipsis"
                     (click)="
                       setActiveRouteResponse(
                         routeResponse.uuid,
@@ -156,7 +151,7 @@
                       )
                     "
                   >
-                    <span class="pr-2"
+                    <span class="pe-2"
                       >Response {{ routeResponseIndex + 1 }} ({{
                         routeResponse.statusCode
                       }})</span
@@ -194,7 +189,7 @@
             </div>
 
             <app-toggle
-              class="ml-2"
+              class="ms-2"
               prefix="response-modes"
               formControlName="responseMode"
               [items]="responseModes"
@@ -221,7 +216,7 @@
                   Headers
                   <span
                     *ngIf="activeRouteResponse?.headers.length"
-                    class="badge badge-hollow font-weight-bold ml-2"
+                    class="badge badge-hollow fw-bold ms-2"
                   >
                     {{ activeRouteResponse?.headers.length }}
                   </span>
@@ -236,12 +231,12 @@
                     *ngIf="activeRoute.responseMode !== null"
                     class="text-warning"
                     [ngbTooltip]="texts.DISABLED_RULES_WARNING"
-                    ><app-svg icon="warning" class="pr-1"></app-svg>
+                    ><app-svg icon="warning" class="pe-1"></app-svg>
                   </span>
                   Rules
                   <span
                     *ngIf="activeRouteResponse?.rules.length"
-                    class="badge badge-hollow font-weight-bold ml-2"
+                    class="badge badge-hollow fw-bold ms-2"
                   >
                     {{ activeRouteResponse?.rules.length }}
                   </span>
@@ -321,14 +316,12 @@
             </app-custom-select>
           </div>
           <div class="input-group">
-            <div
-              class="input-group-prepend ml-auto"
+            <span
+              class="input-group-text ms-auto"
               ngbTooltip="Response latency (ms)"
             >
-              <span class="input-group-text">
-                <app-svg icon="access_time"></app-svg>
-              </span>
-            </div>
+              <app-svg icon="access_time"></app-svg>
+            </span>
             <input
               type="number"
               class="form-control col-3 col-lg-2"
@@ -381,7 +374,7 @@
               <div>
                 <button
                   type="button"
-                  class="btn btn-link btn-xs btn-icon text-primary pl-0"
+                  class="btn btn-link btn-xs btn-icon text-primary ps-0"
                   (click)="formatBody()"
                 >
                   Beautify JSON
@@ -409,15 +402,13 @@
             >
               <app-svg icon="clear"></app-svg>
             </button>
-            <div class="input-group-append">
-              <button
-                class="btn btn-link"
-                (click)="browseFiles()"
-                ngbTooltip="Browse"
-              >
-                <app-svg icon="find_in_page"></app-svg>
-              </button>
-            </div>
+            <button
+              class="btn btn-link"
+              (click)="browseFiles()"
+              ngbTooltip="Browse"
+            >
+              <app-svg icon="find_in_page"></app-svg>
+            </button>
           </div>
 
           <div *ngIf="activeRouteResponse.filePath" class="px-2">
@@ -435,7 +426,7 @@
           <div class="input-group mt-2 px-2">
             <div
               *ngIf="activeRouteResponse.filePath"
-              class="input-group-append align-items-center ml-2"
+              class="align-items-center ms-2"
             >
               <div class="custom-control custom-checkbox">
                 <input
@@ -523,10 +514,10 @@
                   >Disable templating in body and file content
                 </label>
               </div>
-              <div class="input-group-append ml-1">
+              <div class="ms-1">
                 <app-svg
                   icon="info"
-                  class="ml-1"
+                  class="ms-1"
                   ngbTooltip="Helpers like {{ '{' + '{' }}body{{ '}' + '}' }}
         won't be interpreted and file content will be directly streamed (better performances)"
                 ></app-svg>
@@ -548,10 +539,10 @@
                   >Respond with 404 when the file path did not match any files
                 </label>
               </div>
-              <div class="input-group-append ml-1">
+              <div class="ms-1">
                 <app-svg
                   icon="info"
-                  class="ml-1"
+                  class="ms-1"
                   ngbTooltip="This will also fallback to use Body content that is present in the editor"
                 ></app-svg>
               </div>
@@ -568,7 +559,7 @@
             class="py-2 d-inline-block"
             [ngbTooltip]="servedContentTypeTooltip"
           >
-            <small class="pl-0">
+            <small class="ps-0">
               {{ this.effectiveContentType$ | async }}</small
             >
           </div>
@@ -583,7 +574,7 @@
           *ngIf="
             activeRouteResponseLastLog$ | async as activeRouteResponseLastLog
           "
-          class="pr-0 py-2"
+          class="pe-0 py-2"
         >
           <button
             class="btn btn-link btn-icon btn-xs border-0 align-baseline text-primary view-body-link"

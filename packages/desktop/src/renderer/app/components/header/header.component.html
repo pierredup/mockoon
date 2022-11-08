@@ -48,11 +48,11 @@
               [ngClass]="{ active: activeView === tab.id }"
               (click)="setActiveView(tab.id)"
             >
-              <app-svg [icon]="tab.icon" class="pr-2"></app-svg>
+              <app-svg [icon]="tab.icon" class="pe-2"></app-svg>
               {{ tab.title }}
               <span
                 *ngIf="tab.count | async as tabCount"
-                class="badge badge-hollow font-weight-bold ml-2"
+                class="badge badge-hollow fw-bold ms-2"
               >
                 {{ tabCount }}
               </span>
