@@ -3,12 +3,14 @@
   class="h-100 p-2"
   [formGroup]="activeEnvironmentForm"
 >
-  <div class="row">
-    <div class="input-group">
-      <label for="env-settings-name" class="col-form-label pe-2">Name</label
-      ><input
+  <div class="row g-2 align-items-center">
+    <div class="col-auto">
+      <label for="env-settings-name" class="col-form-labe">Name</label>
+    </div>
+    <div class="col-auto">
+      <input
         type="text"
-        class="form-control col-4"
+        class="form-control"
         formControlName="name"
         id="env-settings-name"
       />
@@ -24,13 +26,15 @@
   ></app-title-separator>
 
   <div class="row">
-    <div class="input-group">
+    <div class="col-auto">
       <label for="env-settings-port" class="col-form-label pe-2">
         {{ activeEnvironment?.hostname }} :</label
       >
+    </div>
+    <div class="col-1">
       <input
         type="number"
-        class="form-control col-1"
+        class="form-control"
         id="env-settings-port"
         placeholder="port"
         formControlName="port"
@@ -40,10 +44,14 @@
           canBeEmpty: false
         }"
       />
+    </div>
+    <div class="col-auto">
       <span class="input-group-text font-bold">/</span>
+    </div>
+    <div class="col-4">
       <input
         type="text"
-        class="form-control col-4"
+        class="form-control"
         placeholder="prefix"
         appValidPath
         formControlName="endpointPrefix"
@@ -242,14 +250,14 @@
 
   <div class="form-group">
     <div class="input-group">
-      <div class="custom-control custom-checkbox">
+      <div class="form-check">
         <input
           type="checkbox"
-          class="custom-control-input"
+          class="form-check-input"
           id="env-settings-cors"
           formControlName="cors"
         />
-        <label class="custom-control-label" for="env-settings-cors"
+        <label class="form-check-label" for="env-settings-cors"
           >Automatically handle OPTIONS pre-flight requests
         </label>
       </div>
