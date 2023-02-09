@@ -12,16 +12,14 @@
 
       <div class="ps-3">
         <div class="form-group">
-          <div class="custom-control custom-checkbox">
+          <div class="form-check custom-checkbox">
             <input
               type="checkbox"
-              class="custom-control-input"
+              class="form-check-input"
               id="settings-truncate-route-name"
               formControlName="truncateRouteName"
             />
-            <label
-              class="custom-control-label"
-              for="settings-truncate-route-name"
+            <label class="form-check-label" for="settings-truncate-route-name"
               >Truncate long paths in environments and routes lists</label
             >
           </div>
@@ -85,7 +83,7 @@
       <div class="ps-3">
         <div class="form-group">
           <div class="input-group">
-            <label class="col-form-label pr-2"> Locale </label>
+            <label class="col-form-label pe-2"> Locale </label>
             <app-custom-select
               class="col-2"
               formControlName="fakerLocale"
@@ -93,7 +91,7 @@
               [items]="fakerLocales"
               dropdownId="settings-faker-locale"
             ></app-custom-select>
-            <div class="input-group-append ml-1 align-items-center">
+            <div class="input-group-append ms-1 align-items-center">
               <app-svg
                 icon="info"
                 class="ms-1"
@@ -132,7 +130,7 @@
       <div class="ps-3">
         <div class="form-group">
           <div class="input-group">
-            <label class="col-form-label pr-2">
+            <label class="col-form-label pe-2">
               Environment files watcher
             </label>
             <app-custom-select
@@ -142,7 +140,7 @@
               [items]="fileWatcherOptions"
               dropdownId="settings-storage-file-watcher"
             ></app-custom-select>
-            <div class="input-group-append ml-1 align-items-center">
+            <div class="input-group-append ms-1 align-items-center">
               <app-svg
                 icon="info"
                 class="ms-1"
@@ -155,16 +153,14 @@
 
       <div class="ps-3">
         <div class="form-group">
-          <div class="custom-control custom-checkbox">
+          <div class="form-check custom-checkbox">
             <input
               type="checkbox"
-              class="custom-control-input"
+              class="form-check-input"
               id="settings-storage-pretty-print"
               formControlName="storagePrettyPrint"
             />
-            <label
-              class="custom-control-label"
-              for="settings-storage-pretty-print"
+            <label class="form-check-label" for="settings-storage-pretty-print"
               >Pretty print JSON storage files (settings and
               environments)</label
             >
@@ -180,16 +176,14 @@
       <div class="ps-3">
         <div class="form-group">
           <div class="input-group">
-            <div class="custom-control custom-checkbox">
+            <div class="form-check custom-checkbox">
               <input
                 type="checkbox"
-                class="custom-control-input"
+                class="form-check-input"
                 id="settings-enable-telemetry"
                 formControlName="enableTelemetry"
               />
-              <label
-                class="custom-control-label"
-                for="settings-enable-telemetry"
+              <label class="form-check-label" for="settings-enable-telemetry"
                 >Enable telemetry (restart needed)
               </label>
             </div>
@@ -210,19 +204,17 @@
         icon="play_arrow"
       ></app-title-separator>
 
-      <div class="pl-3">
+      <div class="ps-3">
         <div class="form-group">
           <div class="input-group">
-            <div class="custom-control custom-checkbox">
+            <div class="form-check custom-checkbox">
               <input
                 type="checkbox"
-                class="custom-control-input"
+                class="form-check-input"
                 id="start-environments-on-load"
                 formControlName="startEnvironmentsOnLoad"
               />
-              <label
-                class="custom-control-label"
-                for="start-environments-on-load"
+              <label class="form-check-label" for="start-environments-on-load"
                 >Start all environments on application startup
               </label>
             </div>

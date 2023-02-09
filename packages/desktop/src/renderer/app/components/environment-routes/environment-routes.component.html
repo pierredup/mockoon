@@ -316,15 +316,12 @@
             </app-custom-select>
           </div>
           <div class="input-group">
-            <span
-              class="input-group-text ms-auto"
-              ngbTooltip="Response latency (ms)"
-            >
+            <span class="input-group-text" ngbTooltip="Response latency (ms)">
               <app-svg icon="access_time"></app-svg>
             </span>
             <input
               type="number"
-              class="form-control col-3 col-lg-2"
+              class="form-control"
               [appInputNumber]="{
                 min: 0,
                 max: Infinity,
@@ -428,14 +425,14 @@
               *ngIf="activeRouteResponse.filePath"
               class="align-items-center ms-2"
             >
-              <div class="custom-control custom-checkbox">
+              <div class="form-check custom-checkbox">
                 <input
                   type="checkbox"
-                  class="custom-control-input"
+                  class="form-check-input"
                   id="sendFileAsBody"
                   formControlName="sendFileAsBody"
                 />
-                <label class="custom-control-label" for="sendFileAsBody"
+                <label class="form-check-label" for="sendFileAsBody"
                   >Send as body</label
                 >
               </div>
@@ -501,15 +498,15 @@
         >
           <div class="form-group">
             <div class="input-group">
-              <div class="custom-control custom-checkbox">
+              <div class="form-check custom-checkbox">
                 <input
                   type="checkbox"
-                  class="custom-control-input"
+                  class="form-check-input"
                   id="route-settings-disable-templating"
                   formControlName="disableTemplating"
                 />
                 <label
-                  class="custom-control-label"
+                  class="form-check-label"
                   for="route-settings-disable-templating"
                   >Disable templating in body and file content
                 </label>
@@ -526,15 +523,15 @@
           </div>
           <div class="form-group">
             <div class="input-group">
-              <div class="custom-control custom-checkbox">
+              <div class="form-check custom-checkbox">
                 <input
                   type="checkbox"
-                  class="custom-control-input"
+                  class="form-check-input"
                   id="route-settings-fallback-to-404"
                   formControlName="fallbackTo404"
                 />
                 <label
-                  class="custom-control-label"
+                  class="form-check-label"
                   for="route-settings-fallback-to-404"
                   >Respond with 404 when the file path did not match any files
                 </label>

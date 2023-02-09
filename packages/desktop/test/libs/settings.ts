@@ -62,7 +62,7 @@ class Settings {
   private getSettingCheckbox(
     settingName: SettingNames
   ): ChainablePromiseElement<WebdriverIO.Element> {
-    return $(`.modal-dialog input#${settingName} ~ .custom-control-label`);
+    return $(`.modal-dialog input#${settingName} ~ .form-check-label`);
   }
 }
 

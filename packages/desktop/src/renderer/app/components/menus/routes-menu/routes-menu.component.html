@@ -141,7 +141,7 @@
         <div>
           <app-svg
             [icon]="folder.collapsed ? 'folder' : 'folder_open'"
-            class="pr-2"
+            class="pe-2"
           ></app-svg>
         </div>
         <app-editable-element
@@ -241,13 +241,11 @@
             ><app-svg
               *ngIf="duplicatedRoutes[activeEnvironment.uuid]?.has(route.uuid)"
               icon="warning"
-              class="pr-2"
+              class="pe-2"
             ></app-svg>
           </span>
           <span
-            class="badge badge-default http-method-{{
-              route.method
-            }} float-right"
+            class="badge badge-default http-method-{{ route.method }} float-end"
             >{{ route.method | uppercase }}
           </span>
           /{{ route.endpoint }}

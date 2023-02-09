@@ -1,13 +1,13 @@
 <div
   *ngIf="activeEnvironment$ | async as activeEnvironment"
-  class="h-100 p-2"
+  class="d-flex flex-column flex-fill mh0 h-100 p-2"
   [formGroup]="activeEnvironmentForm"
 >
-  <div class="row g-2 align-items-center">
-    <div class="col-auto">
-      <label for="env-settings-name" class="col-form-labe">Name</label>
+  <div class="d-flex g-2 align-items-center">
+    <div>
+      <label for="env-settings-name" class="">Name</label>
     </div>
-    <div class="col-auto">
+    <div class="ms-2">
       <input
         type="text"
         class="form-control"
@@ -25,13 +25,13 @@
     }}/{{ activeEnvironment?.endpointPrefix }}"
   ></app-title-separator>
 
-  <div class="row">
-    <div class="col-auto">
+  <div class="d-flex">
+    <div>
       <label for="env-settings-port" class="col-form-label pe-2">
         {{ activeEnvironment?.hostname }} :</label
       >
     </div>
-    <div class="col-1">
+    <div>
       <input
         type="number"
         class="form-control"
@@ -45,10 +45,10 @@
         }"
       />
     </div>
-    <div class="col-auto">
+    <div>
       <span class="input-group-text font-bold">/</span>
     </div>
-    <div class="col-4">
+    <div>
       <input
         type="text"
         class="form-control"
@@ -59,7 +59,7 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="d-flex pt-3 pr-2">
     <div class="input-group">
       <div class="form-check">
         <input
@@ -89,7 +89,7 @@
   ></app-title-separator>
 
   <ng-container formGroupName="tlsOptions">
-    <div class="row">
+    <div class="d-flex">
       <div class="form-check">
         <input
           type="checkbox"
@@ -103,7 +103,7 @@
       </div>
     </div>
 
-    <div class="d-flex" id="tls-cert-container">
+    <div class="d-flex py-2" id="tls-cert-container">
       <app-toggle
         prefix="cert-types"
         formControlName="type"
@@ -187,7 +187,7 @@
       </div>
     </div>
 
-    <div class="form-group">
+    <div class="py-2">
       <div class="input-group">
         <label for="env-settings-tls-caPath" class="col-form-label pe-2"
           >CA cert path</label
@@ -206,7 +206,7 @@
         </button>
       </div>
     </div>
-    <div class="form-group">
+    <div class="py-2">
       <div class="input-group">
         <label for="env-settings-tls-passphrase" class="col-form-label pe-2"
           >Cert passphrase</label
